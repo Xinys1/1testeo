@@ -11,7 +11,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=WindSong:wght@400;500&display=swap" rel="stylesheet">
-    
 </head>
 <body>
     <div class="container">
@@ -19,10 +18,10 @@
             <div class="nav-links">
                 <a href="trabajo.html" class="btn">Trabajo</a>
                 <a href="bio.html" class="btn">Bio</a>
-                <a href="file:///C:/Users/super/OneDrive/Escritorio/ClaseTom%C3%A1z/1testeo/Contacto/index.html" class="btn">Contacto</a>
+                <span id="contacto-toggle" class="btn" style="cursor: pointer;">Contacto</span>
                 <div class="social-icons">
-                    <a href="https://Instagram.com" target="_blank"><img src="icons8-instagram-48.png" alt="fa-x-twitter" style="width: 34px; height: 34px;"></a>
-                    <a href="https://x.com" target="_blank"><img src="icons8-x-48.png" alt="fa-x-twitter" style="width: 34px; height: 34px;"></a>
+                    <a href="https://Instagram.com" target="_blank"><img src="icons8-instagram-48.png" alt="Instagram" style="width: 34px; height: 34px;"></a>
+                    <a href="https://x.com" target="_blank"><img src="icons8-x-48.png" alt="X" style="width: 34px; height: 34px;"></a>
                 </div>
             </div>
         </nav>
@@ -35,35 +34,89 @@
         <section class="gallery">
             <div class="gallery-container">
                 <div class="gallery-item">
-                    <a href="C:\Users\super\OneDrive\Escritorio\ClaseTomáz\1testeo\ZaraHome\index.html" target="_blank"><img src="imagen1.png" alt="Proyecto 1"></a>
+                    <a href="Zarahome/index.html" target="_blank"><img src="imagen1.png" alt="Proyecto 1"></a>
                 </div>
                 <div class="gallery-item">
-                    <a href="C:\Users\super\OneDrive\Escritorio\ClaseTomáz\1testeo\Procesiones\index.html" target="_blank"><img src="imagen2.png" alt="Proyecto 2"></a>
+                    <a href="Procesiones/index.html" target="_blank"><img src="imagen2.png" alt="Proyecto 2"></a>
                 </div>
             </div>
         </section>
     </div>
     
-        <!-- Sección Parallax agregada aquí, fuera del contenedor de la galería -->
-        <section class="parallax-section"></section>
-        
-        <div class="container">
+    <!-- Sección Parallax agregada aquí, fuera del contenedor de la galería -->
+    <section class="parallax-section"></section>
+    
+    <div class="container">
         <section class="gallery">
             <div class="gallery-container">
                 <div class="gallery-item">
-                    <a href="file:///C:/Users/super/OneDrive/Escritorio/ClaseTom%C3%A1z/1testeo/Inmobiliaria/index.html" target="_blank"><img src="imagen3.png" alt="Proyecto 3"></a>
+                    <a href="Inmobiliaria/index.html" target="_blank"><img src="imagen3.png" alt="Proyecto 3"></a>
                 </div>
                 <div class="gallery-item">
-                    <a href="file:///C:/Users/super/OneDrive/Escritorio/ClaseTom%C3%A1z/Vinos%2014-03/index.html" target="_blank"><img src="imagen4.png" alt="Proyecto 4"></a>
+                    <a href="Vinos%2014-03/index.html" target="_blank"><img src="imagen4.png" alt="Proyecto 4"></a>
                 </div>
             </div>
         </section>
-        
 
         <div class="bottom-section">
             <hr>
             <p>Política de Privacidad<br>Copyright reservado a Jose Asensio</p>
         </div>
     </div>
+
+    <!-- Modal de formulario -->
+    <div id="contacto-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <form>
+                <h2>Contacto</h2>
+                <label for="nombre">Nombre y apellidos:</label><br>
+                <input type="text" id="nombre" name="nombre" required><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="telefono">Teléfono:</label><br>
+                <input type="tel" id="telefono" name="telefono"><br>
+
+                <label for="comentarios">Comentarios:</label><br>
+                <textarea id="comentarios" name="comentarios" rows="3" cols="30"></textarea><br>
+
+                <label for="opinion">¿Qué le pareció la página?</label><br>
+                <select id="opinion" name="opinion">
+                    <option value="excelente">Excelente</option>
+                    <option value="buena">Buena</option>
+                    <option value="regular">Regular</option>
+                    <option value="mala">Mala</option>
+                </select><br>
+
+                <button type="submit">Enviar</button>
+            </form>
+            <span id="close-modal" class="close">&times;</span>
+        </div>
+    </div>
+
+    <!-- JavaScript para el modal -->
+    <script>
+        // Abrir el modal al hacer clic en "Contacto"
+        document.getElementById("contacto-toggle").addEventListener("click", function(e) {
+            e.preventDefault();
+            var modal = document.getElementById("contacto-modal");
+            modal.style.display = "block";
+        });
+
+        // Cerrar el modal al hacer clic en la "X"
+        document.getElementById("close-modal").addEventListener("click", function() {
+            var modal = document.getElementById("contacto-modal");
+            modal.style.display = "none";
+        });
+
+        // Cerrar el modal al hacer clic fuera de él
+        window.addEventListener("click", function(e) {
+            var modal = document.getElementById("contacto-modal");
+            if (e.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+    </script>
 </body>
 </html>

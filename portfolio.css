@@ -70,7 +70,6 @@ nav {
     text-align: center;
 }
 
-
 .hero h1 {
     font-family: "WindSong", cursive;
     font-style: normal;
@@ -145,6 +144,104 @@ nav {
     position: relative;
 }
 
+/* Modal de formulario */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #252525; /* Fondo más oscuro y elegante */
+    padding: 20px;
+    border-radius: 15px; /* Esquinas más redondeadas */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+    width: 90%; /* Ajusta al 90% de la pantalla */
+    max-width: 400px; /* Límite máximo */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrado perfecto */
+    color: #e0e0e0; /* Texto claro */
+    animation: slideIn 0.3s ease-out; /* Animación de entrada */
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.modal-content label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.modal-content input,
+.modal-content textarea,
+.modal-content select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #4d4d4d;
+    border-radius: 8px; /* Esquinas redondeadas en campos */
+    background-color: #2d2d2d; /* Fondo oscuro para los campos */
+    color: #e0e0e0;
+    font-size: 14px;
+}
+
+.modal-content textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+.modal-content button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px; /* Esquinas redondeadas en botón */
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+}
+
+.modal-content button:hover {
+    background-color: #45a049;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #e0e0e0;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ffffff;
+}
+
 /* Responsividad */
 @media (max-width: 768px) {
     .hero h1 {
@@ -161,5 +258,9 @@ nav {
     }
     .nav-links {
         gap: 8px; /* Menos separación en pantallas pequeñas */
+    }
+    .modal-content {
+        width: 85%; /* Más ancho en móviles */
+        max-width: 350px;
     }
 }
