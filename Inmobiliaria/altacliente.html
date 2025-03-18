@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alta Cliente - Martinez & Lopes SL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3em;
+            color: #f5e6ca; /* Beige suave */
+            text-align: center;
+            margin: 40px 0;
+            text-shadow: 2px 2px 5px rgba(245, 230, 202, 0.5);
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 750px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(5px); /* Efecto vidrio esmerilado */
+        }
+
+        label {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #f5e6ca;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 20px;
+            border: 1px solid #f5e6ca;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="date"]:focus,
+        textarea:focus {
+            border-color: #d9c9a3; /* Beige más oscuro */
+            outline: none;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #d4d4d4;
+        }
+
+        textarea {
+            height: 150px;
+            resize: none;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        button {
+            background: #f5e6ca; /* Beige suave */
+            color: #1a1a2e;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 2px 5px rgba(245, 230, 202, 0.3);
+        }
+
+        button:hover {
+            background: #d9c9a3; /* Beige más oscuro */
+            transform: scale(1.05);
+        }
+
+        button:active {
+            background: #b38f00;
+            transform: scale(1);
+        }
+
+        /* Botón Volver */
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #f5e6ca;
+            color: #1a1a2e;
+            padding: 10px 20px;
+            font-size: 1em;
+            text-decoration: none;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(245, 230, 202, 0.3);
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: #d9c9a3;
+            transform: scale(1.05);
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .form-container {
+                padding: 20px;
+                width: 90%;
+            }
+
+            .form-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            button {
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .back-btn {
+                font-size: 0.9em;
+                padding: 8px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            label {
+                font-size: 1em;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="date"],
+            textarea {
+                font-size: 0.9em;
+            }
+
+            button {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .form-container {
+                max-width: 900px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="paginainicio.html" class="back-btn">Volver a Página Principal</a>
+    <h1>Alta Cliente</h1>
+
+    <div class="form-container">
+        <form id="altaClienteForm" onsubmit="validarFormulario(event)">
+            <label for="nombre">Nombre y Apellidos:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" maxlength="75" required>
+
+            <label for="dni">DNI (Formato 00000000-L):</label>
+            <input type="text" id="dni" name="dni" placeholder="Ej. 12345678-A" required>
+
+            <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+
+            <label for="domicilio">Domicilio:</label>
+            <input type="text" id="domicilio" name="domicilio" placeholder="Ej. Calle Falsa 123" maxlength="45">
+
+            <label for="poblacion">Población:</label>
+            <input type="text" id="poblacion" name="poblacion" placeholder="Ej. Madrid" maxlength="45">
+
+            <label for="provincia">Provincia:</label>
+            <input type="text" id="provincia" name="provincia" placeholder="Ej. Madrid" maxlength="20">
+
+            <label for="email">Email de Respuesta:</label>
+            <input type="email" id="email" name="email" placeholder="Ej. juan@example.com" required>
+
+            <label for="comentarios">Observaciones / Comentarios:</label>
+            <textarea id="comentarios" name="comentarios" placeholder="Escriba aquí sus observaciones..."></textarea>
+
+            <div class="form-actions">
+                <button type="submit">Enviar</button>
+                <button type="button" onclick="limpiarFormulario()">Limpiar</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Función para validar el DNI
+        function validarDNI(dni) {
+            const dniRegex = /^\d{8}[A-Z]$/;
+            if (!dniRegex.test(dni)) {
+                return false;
+            }
+            const letra = dni.charAt(8);
+            const dniNumeros = parseInt(dni.substring(0, 8), 10);
+            const letras = 'TRWAGMYFPDXBNJZSQVHLCKE';
+            const letraCalculada = letras.charAt(dniNumeros % 23);
+            return letra === letraCalculada;
+        }
+
+        // Función para validar el formulario
+        function validarFormulario(event) {
+            event.preventDefault();
+            const nombre = document.getElementById('nombre').value.trim();
+            const dni = document.getElementById('dni').value.trim();
+            const fechaNacimiento = document.getElementById('fechaNacimiento').value.trim();
+            const domicilio = document.getElementById('domicilio').value.trim();
+            const poblacion = document.getElementById('poblacion').value.trim();
+            const provincia = document.getElementById('provincia').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const comentarios = document.getElementById('comentarios').value.trim();
+
+            const nombreRegex = /^[A-Za-z\s]+$/;
+            if (!nombre || nombre.length > 75 || !nombreRegex.test(nombre)) {
+                alert('El nombre y apellidos deben ser válidos y no superar los 75 caracteres.');
+                return;
+            }
+
+            if (!validarDNI(dni)) {
+                alert('El DNI es incorrecto.');
+                return;
+            }
+
+            if (!fechaNacimiento) {
+                alert('La fecha de nacimiento es obligatoria.');
+                return;
+            }
+
+            if (domicilio.length > 45) {
+                alert('El domicilio no puede superar los 45 caracteres.');
+                return;
+            }
+
+            if (poblacion.length > 45) {
+                alert('La población no puede superar los 45 caracteres.');
+                return;
+            }
+
+            if (provincia.length > 20) {
+                alert('La provincia no puede superar los 20 caracteres.');
+                return;
+            }
+
+            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!email || !emailRegex.test(email)) {
+                alert('El email no tiene un formato válido.');
+                return;
+            }
+
+            alert('Formulario enviado correctamente.');
+        }
+
+        // Función para limpiar el formulario
+        function limpiarFormulario() {
+            document.getElementById('altaClienteForm').reset();
+        }
+    </script>
+</body>
+</html>

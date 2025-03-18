@@ -1,0 +1,142 @@
+/* Reset de márgenes y padding para evitar inconsistencias entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configuración general de la fuente y color de fondo */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Título principal */
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #1d3557;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Subtítulos */
+h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1d3557;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* Sección general de contenido */
+section {
+    margin-bottom: 40px;
+}
+
+/* Estilo para los párrafos */
+p {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+/* Enlaces dentro del aviso legal */
+a {
+    color: #0077cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo de la tabla (si la hubiera) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+table th {
+    background-color: #1d3557;
+    color: white;
+}
+
+/* Listas */
+ul, ol {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para los formularios o campos de texto (si es necesario) */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #1d3557;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 12px 20px;
+    border-radius: 4px;
+}
+
+input[type="submit"]:hover {
+    background-color: #457b9d;
+}
+
+/* Estilo de los pies de página */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #777;
+}
+
+footer a {
+    color: #0077cc;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries: para hacer la web más responsiva */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    table th, table td {
+        padding: 10px;
+    }
+}

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alta Cliente</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        h2 {
+            text-align: center;
+            color: #ff6600;
+            font-size: 2rem;
+            margin-top: 20px;
+        }
+
+        /* Estilos del formulario */
+        form {
+            background-color: white;
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+        }
+
+        label {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="email"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+
+        input[type="text"]:focus,
+        input[type="date"]:focus,
+        input[type="email"]:focus {
+            border-color: #ff6600;
+            outline: none;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin: 5px 10px 0 0;
+        }
+
+        fieldset {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            background-color: #f9f9f9;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #ff6600;
+            font-size: 1.1rem;
+        }
+
+        .form-actions {
+            text-align: center;
+        }
+
+        .form-actions input[type="submit"] {
+            background-color: #ff6600;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color 0.3s;
+            width: auto;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .form-actions input[type="submit"]:hover {
+            background-color: #e65c00;
+        }
+
+        .form-actions button {
+            background-color: #ccc;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .form-actions button:hover {
+            background-color: #999;
+        }
+
+        /* Ajustes para dispositivos móviles */
+        @media (max-width: 600px) {
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            form {
+                padding: 20px;
+                width: 90%;
+            }
+
+            input[type="submit"] {
+                width: 100%;
+            }
+        }
+
+        /* Estilos para mensajes de éxito/error */
+        .message {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.1rem;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Formulario de Alta Cliente</h2>
+    <form id="alta-form">
+        <label>Nombre:
+            <input type="text" id="nombre" maxlength="15" pattern="[A-Za-z]+" placeholder="Introduce tu nombre" required>
+        </label>
+
+        <label>Apellido 1:
+            <input type="text" id="apellido1" maxlength="30" pattern="[A-Za-z]+" placeholder="Introduce tu primer apellido" required>
+        </label>
+
+        <label>Apellido 2:
+            <input type="text" id="apellido2" maxlength="30" pattern="[A-Za-z]+" placeholder="Introduce tu segundo apellido" required>
+        </label>
+
+        <label>DNI:
+            <input type="text" id="dni" pattern="[0-9]{8}[A-Z]" placeholder="Introduce tu DNI (Ej: 12345678A)" required>
+        </label>
+
+        <label>Fecha de nacimiento:
+            <input type="date" id="fecha-nac" min="1900-01-01" max="2020-12-31" required>
+        </label>
+
+        <label>Domicilio:
+            <input type="text" id="domicilio" maxlength="45" placeholder="Introduce tu domicilio">
+        </label>
+
+        <label>Población:
+            <input type="text" id="poblacion" maxlength="45" placeholder="Introduce tu población">
+        </label>
+
+        <label>Provincia:
+            <input type="text" id="provincia" maxlength="20" placeholder="Introduce tu provincia">
+        </label>
+
+        <fieldset>
+            <legend>Interesado/a en:</legend>
+            <input type="checkbox"> Moda clásica
+            <input type="checkbox"> Camisas
+            <input type="checkbox"> Pantalones
+            <input type="checkbox"> Moda casual
+            <input type="checkbox"> Complementos
+        </fieldset>
+
+        <fieldset>
+            <legend>Formación académica:</legend>
+            <input type="radio" name="formacion" value="Doctor"> Doctor
+            <input type="radio" name="formacion" value="Licenciado"> Licenciado - Grado
+            <input type="radio" name="formacion" value="Ingeniería"> Ingeniería Técnica
+            <input type="radio" name="formacion" value="FP"> FP Grado Superior - Medio
+            <input type="radio" name="formacion" value="Bachillerato"> Bachillerato
+            <input type="radio" name="formacion" value="ESO"> ESO - BUP
+            <input type="radio" name="formacion" value="EGB"> EGB
+            <input type="radio" name="formacion" value="Sin estudios"> Sin estudios
+        </fieldset>
+
+        <fieldset>
+            <legend>Aficiones:</legend>
+            <input type="checkbox"> Lectura
+            <input type="checkbox"> Deporte
+            <input type="checkbox"> Viajes
+            <input type="checkbox"> Música
+            <input type="checkbox"> Otros
+        </fieldset>
+
+        <label>E-mail de respuesta:
+            <input type="email" id="email" placeholder="Introduce tu correo electrónico" required>
+        </label>
+
+        <div class="form-actions">
+            <input type="submit" value="Enviar">
+            <button type="button" onclick="window.close()">Cerrar</button>
+        </div>
+    </form>
+
+    <div id="response-message" class="message"></div>
+
+    <script>
+        // Función para validar el formulario y mostrar un mensaje
+        document.getElementById("alta-form").addEventListener("submit", function(event) {
+            event.preventDefault();  // Prevenir el envío por defecto
+
+            // Validación de los campos
+            var nombre = document.getElementById("nombre").value;
+            var apellido1 = document.getElementById("apellido1").value;
+            var apellido2 = document.getElementById("apellido2").value;
+            var dni = document.getElementById("dni").value;
+            var email = document.getElementById("email").value;
+
+            if (nombre && apellido1 && apellido2 && dni && email) {
+                // Si todo es correcto, se muestra mensaje de éxito
+                document.getElementById("response-message").innerHTML = "Formulario enviado correctamente. ¡Gracias!";
+                document.getElementById("response-message").className = "message success";
+                document.getElementById("alta-form").reset();  // Resetear formulario
+            } else {
+                // Si falta algún campo, muestra mensaje de error
+                document.getElementById("response-message").innerHTML = "Por favor, rellena todos los campos requeridos.";
+                document.getElementById("response-message").className = "message error";
+            }
+        });
+    </script>
+</body>
+</html>

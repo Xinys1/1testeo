@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casas en Alquiler - Martinez & Lopes SL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Casas en Alquiler</h1>
+            <div class="sort-container">
+                <select id="sort-price">
+                    <option value="default">Precio</option>
+                    <option value="asc">Menor a Mayor</option>
+                    <option value="desc">Mayor a Menor</option>
+                </select>
+                <select id="sort-city">
+                    <option value="default">Ciudad</option>
+                    <option value="asc">A-Z</option>
+                    <option value="desc">Z-A</option>
+                </select>
+                <button id="search-btn">Buscar</button>
+            </div>
+        </div>
+    </header>
+    <a href="paginainicio.html" class="back-button">Volver</a>
+
+    <section class="property-gallery" id="property-gallery">
+        <!-- Propiedad 1 -->
+        <div class="property" data-price="1500" data-city="Madrid">
+            <div class="property-img-container">
+                <img src="ima7.jpg" alt="Casa 1" class="property-img" data-slider="house1">
+            </div>
+            <div class="property-info">
+                <h2>Casa en Alquiler</h2>
+                <div class="property-details">
+                    <p><span>Precio:</span> 1.500 €/mes</p>
+                    <p><span>Ciudad:</span> Madrid</p>
+                    <p><span>Superficie construida:</span> 120 m²</p>
+                    <p><span>Habitaciones:</span> 3</p>
+                    <p><span>Baños:</span> 2</p>
+                    <p><span>Planta:</span> 2ª</p>
+                </div>
+                <div class="comments">
+                    "Una casa acogedora con un jardín espectacular, perfecta para familias que buscan tranquilidad."
+                </div>
+                <div class="button-container">
+                    <button class="more-info-button" data-popup="house1">Más información</button>
+                    <button class="contact-button">Contactar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Propiedad 2 -->
+        <div class="property" data-price="2000" data-city="Barcelona">
+            <div class="property-img-container">
+                <img src="ima8.jpg" alt="Casa 2" class="property-img" data-slider="house2">
+            </div>
+            <div class="property-info">
+                <h2>Casa en Alquiler</h2>
+                <div class="property-details">
+                    <p><span>Precio:</span> 2.000 €/mes</p>
+                    <p><span>Ciudad:</span> Barcelona</p>
+                    <p><span>Superficie construida:</span> 150 m²</p>
+                    <p><span>Habitaciones:</span> 4</p>
+                    <p><span>Baños:</span> 3</p>
+                    <p><span>Planta:</span> 1ª</p>
+                </div>
+                <div class="comments">
+                    "Espaciosa y moderna, con una piscina que hace que cada día sea como unas vacaciones."
+                </div>
+                <div class="button-container">
+                    <button class="more-info-button" data-popup="house2">Más información</button>
+                    <button class="contact-button">Contactar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Propiedad 3 -->
+        <div class="property" data-price="2500" data-city="Valencia">
+            <div class="property-img-container">
+                <img src="ima9.jpg" alt="Casa 3" class="property-img" data-slider="house3">
+            </div>
+            <div class="property-info">
+                <h2>Casa en Alquiler</h2>
+                <div class="property-details">
+                    <p><span>Precio:</span> 2.500 €/mes</p>
+                    <p><span>Ciudad:</span> Valencia</p>
+                    <p><span>Superficie construida:</span> 200 m²</p>
+                    <p><span>Habitaciones:</span> 5</p>
+                    <p><span>Baños:</span> 4</p>
+                    <p><span>Planta:</span> Baja</p>
+                </div>
+                <div class="comments">
+                    "Lujo y amplitud en una ubicación privilegiada, ideal para quienes buscan lo mejor."
+                </div>
+                <div class="button-container">
+                    <button class="more-info-button" data-popup="house3">Más información</button>
+                    <button class="contact-button">Contactar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pop-up -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn">×</span>
+            <div class="popup-images">
+                <img src="" alt="Main Image" class="main-image">
+                <div class="secondary-images">
+                    <div class="image-block">
+                        <img src="" alt="Sec 1">
+                        <img src="" alt="Sec 2">
+                        <img src="" alt="Sec 3">
+                    </div>
+                    <div class="image-block">
+                        <img src="" alt="Sec 4">
+                        <img src="" alt="Sec 5">
+                        <img src="" alt="Sec 6">
+                    </div>
+                </div>
+            </div>
+            <div class="popup-comments">
+                <h3>Comentarios</h3>
+                <p>"La cocina es increíblemente funcional y moderna pa cocinar droja."</p>
+                <p>"El vecindario es una mierda, to lleno moros"</p>
+                <p>"La iluminación una mierda parece Mordor."</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cinzel', serif;
+    background-color: #f9e9e6;
+    color: #3c2f2f;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    background-color: #666366;
+    color: #fff;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+header h1 {
+    font-family: "Special Elite", system-ui;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+/* Botones del header (.btn) */
+.btn {
+    cursor: pointer;
+    position: relative;
+    padding: 10px 20px; /* Tamaño pequeño como antes */
+    background: #f5e6d3; /* Fondo claro como antes */
+    font-size: 16px; /* Reducido de 28px para mantenerlo pequeño */
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: all 1s ease;
+    text-decoration: none;
+    color: #6b5e4e; /* Color del texto como antes */
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn::after,
+.btn::before {
+    content: " ";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border: 0 solid #fff;
+    transition: all 1s ease;
+}
+
+.btn::after {
+    top: -1px;
+    left: -1px;
+    border-top: 5px solid #3c2f2f; /* Marrón oscuro del header */
+    border-left: 5px solid #3c2f2f;
+}
+
+.btn::before {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 5px solid #3c2f2f;
+    border-right: 5px solid #3c2f2f;
+}
+
+.btn:hover {
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    background: #e6d8c5; /* Hover claro como antes */
+    color: #5a4b3d;
+}
+
+.btn:hover::before,
+.btn:hover::after {
+    width: 100%;
+    height: 100%;
+}
+
+/* Main */
+main {
+    flex-grow: 1;
+    padding-top: 100px;
+}
+
+/* Introducción y Video */
+.intro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.intro {
+    width: 50%;
+    text-align: center;
+}
+
+.intro h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #6b3e1b;
+}
+
+.intro p {
+    font-size: 18px;
+    color: #4a3a3a;
+}
+
+.video {
+    width: 50%;
+}
+
+.video iframe {
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Contenido dividido */
+.content {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.map {
+    width: 50%;
+    height: 400px;
+}
+
+.map iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.features {
+    width: 50%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.features h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #6b3e1b;
+}
+
+.features ul {
+    list-style: none;
+}
+
+.features li {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.features li strong {
+    color: #8d5524;
+}
+
+/* Sección de botones de DO (.buttons) */
+.buttons {
+    cursor: pointer;
+    position: relative;
+    padding: 5px 10px; /* Tamaño más pequeño como antes */
+    background: #f5e6d3; /* Fondo claro */
+    font-size: 14px; /* Reducido para mantenerlo pequeño */
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: all 1s ease;
+    text-decoration: none;
+    color: #6b5e4e;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.buttons::after,
+.buttons::before {
+    content: " ";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border: 0 solid #fff;
+    transition: all 1s ease;
+}
+
+.buttons::after {
+    top: -1px;
+    left: -1px;
+    border-top: 5px solid #3c2f2f; /* Marrón oscuro para coherencia */
+    border-left: 5px solid #3c2f2f;
+}
+
+.buttons::before {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 5px solid #3c2f2f;
+    border-right: 5px solid #3c2f2f;
+}
+
+.buttons:hover {
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    background: #e6d8c5; /* Hover claro */
+    color: #5a4b3d;
+}
+
+.buttons:hover::before,
+.buttons:hover::after {
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilo para la sección de botones */
+.buttons-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.buttons-section h5 {
+    font-family: 'Cinzel', serif;
+    font-size: 10px; /* Tamaño pequeño como antes */
+    margin-bottom: 5px;
+    color: #6b3e1b;
+}
+
+.buttons-section nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Footer */
+footer {
+    background-color: #3c2f2f;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
+
+/* Galería */
+.gallery {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.gallery h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #6b3e1b;
+}
+
+.gallery-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.gallery-container img {
+    width: 25%; /* Cada imagen ocupa el 25% del contenedor */
+    height: 200px; /* Altura fija para uniformidad */
+    object-fit: cover; /* Ajusta la imagen sin distorsionarla */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.05); /* Efecto de ampliación al pasar el ratón */
+}
+
+.special-elite-regular {
+    font-family: "Special Elite", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  

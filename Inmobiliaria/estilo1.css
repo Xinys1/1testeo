@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #fff;
+    line-height: 1.6;
+    padding-bottom: 60px;
+}
+
+/* Header con botones */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px 40px;
+    z-index: 1000;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo-container {
+    margin-left: 20px;
+}
+
+.logo-text {
+    font-family: 'Cinzel', serif; /* Tipografía elegante */
+    font-size: 2em; /* Tamaño grande pero equilibrado */
+    color: #f5e6ca; /* Beige suave */
+    letter-spacing: 2px; /* Espaciado para lujo */
+    text-transform: uppercase;
+    font-weight: 800;
+    text-shadow: 3px 3px 7px rgba(245, 230, 202, 0.5); /* Sombra sutil */
+    margin: 0;
+}
+
+/* Botones (sin cambios, solo para referencia) */
+.button-container nav {
+    display: flex;
+    gap: 15px;
+}
+
+.button-container a {
+    padding: 8px 16px;
+    font-size: 0.9em;
+    text-decoration: none;
+    color: #f5e6ca;
+    border: 1px solid #f5e6ca;
+    border-radius: 25px;
+    text-transform: uppercase;
+    font-weight: 600;
+    background: rgba(245, 230, 202, 0.1);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(245, 230, 202, 0.3);
+}
+
+.button-container a:hover {
+    background: #d9c9a3;
+    color: #1a1a2e;
+    box-shadow: 0 4px 10px rgba(245, 230, 202, 0.5);
+}
+
+.button-container a#volverBtn {
+    background: #f5e6ca;
+    color: #1a1a2e;
+}
+
+.button-container a#volverBtn:hover {
+    background: #d9c9a3;
+}
+
+/* Popup de ubicación */
+.popup-ubicacion {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-ubicacion .popup-content {
+    width: 80%;
+    height: 80%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.popup-ubicacion iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+/* Cuadrícula de imágenes */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Aumentado el tamaño mínimo */
+    gap: 25px;
+    padding: 100px 40px 40px;
+}
+
+.image-item {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.image-item:hover {
+    transform: scale(1.03);
+}
+
+.image-grid img {
+    width: 100%;
+    height: 300px; /* Imágenes más grandes */
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+
+.description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 20px; /* Más espacio para texto */
+    text-align: center;
+    border-radius: 20px;
+    font-size: 1.2em; /* Texto más legible */
+}
+
+.image-item:hover .description {
+    opacity: 1;
+}
+
+.price-button {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #e6b800;
+    color: #1a1a2e;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.price-button:hover {
+    background: #b38f00;
+}
+
+/* Popups de casas */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup .popup-content {
+    width: 80%;
+    max-width: 600px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.popup .popup-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+.popup .popup-content p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #1a1a2e;
+}
+
+.popup .close-btn {
+    background: #e6b800;
+    color: #1a1a2e;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.popup .close-btn:hover {
+    background: #b38f00;
+}
+
+/* Copyright */
+.copyright {
+    text-align: center;
+    padding: 15px;
+    font-size: 1em;
+    background: rgba(0, 0, 0, 0.8);
+    color: #d4d4d4;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+}
+
+/* Animaciones */
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+.fade-out {
+    animation: fadeOut 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}

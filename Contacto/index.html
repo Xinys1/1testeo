@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Encuesta/Feedback</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Formulario de Encuesta/Feedback</h2>
+        <form id="feedback-form">
+            <div class="form-group">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="last-name">Apellidos:</label>
+                <input type="text" id="last-name" name="last-name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Teléfono:</label>
+                <input type="text" id="phone" name="phone">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="question1">¿Cómo calificarías el servicio?</label>
+                <select id="question1" name="question1" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="Excelente">Excelente</option>
+                    <option value="Bueno">Bueno</option>
+                    <option value="Regular">Regular</option>
+                    <option value="Malo">Malo</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="question2">¿Recomendarías nuestro producto/servicio?</label>
+                <select id="question2" name="question2" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="Sí">Sí</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="question3">¿Qué tan fácil fue usar nuestro servicio/producto?</label>
+                <select id="question3" name="question3" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="Muy fácil">Muy fácil</option>
+                    <option value="Fácil">Fácil</option>
+                    <option value="Difícil">Difícil</option>
+                    <option value="Muy difícil">Muy difícil</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="question4">¿Qué mejorarías de nuestro servicio/producto?</label>
+                <textarea id="question4" name="question4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="comments">Comentarios adicionales:</label>
+                <textarea id="comments" name="comments"></textarea>
+            </div>
+
+            <input type="submit" value="Enviar Feedback">
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

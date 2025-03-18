@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio - Grok Luxury Estates</title>
+    <link rel="stylesheet" href="estilo1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Contenedor de los botones -->
+<header class="button-container">
+    <div class="logo-container">
+        <h1 class="logo-text">Martinez & Lopes SL</h1>
+    </div>
+    <nav>
+        <a href="#" id="situacionBtn">Ubicación</a>
+        <a href="altacliente.html">Alta Cliente</a>
+        <a href="alquiler.html">Alquiler</a>
+        <a href="venta.html">Venta</a>
+        <a href="avisolegal.html">Aviso Legal</a>
+        <a href="index.html" id="volverBtn">Volver a Index</a>
+    </nav>
+</header>
+
+    <!-- Popup para mostrar la ubicación -->
+    <div id="situacionPopup" class="popup-ubicacion">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closePopup('situacionPopup')">Cerrar</button>
+            <iframe src="https://www.google.com/maps?q=Calle+Abrazamozas+3,+Zamora&output=embed" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+
+    <!-- Cuadrícula de imágenes -->
+    <section class="image-grid">
+        <div class="image-item">
+            <img src="ima1.jpg" alt="Foto 1">
+            <div class="description">Hermosa casa con jardín</div>
+            <a href="#" class="price-button">Precio: 120,000€</a>
+        </div>
+        <div class="image-item">
+            <img src="ima2.jpg" alt="Foto 2">
+            <div class="description">Casa con piscina y terraza</div>
+            <a href="#" class="price-button">Precio: 150,000€</a>
+        </div>
+        <div class="image-item" onclick="openPopup('popup3')">
+            <img src="ima3.jpg" alt="Foto 3">
+            <div class="description">Casa con 3 habitaciones</div>
+            <a href="#" class="price-button">Precio: 175,000€</a>
+        </div>
+        <div class="image-item" onclick="openPopup('popup4')">
+            <img src="ima4.jpg" alt="Foto 4">
+            <div class="description">Casa con vistas al mar</div>
+            <a href="#" class="price-button">Precio: 200,000€</a>
+        </div>
+        <div class="image-item" onclick="openPopup('popup5')">
+            <img src="ima5.jpg" alt="Foto 5">
+            <div class="description">Casa moderna de 5 habitaciones</div>
+            <a href="#" class="price-button">Precio: 250,000€</a>
+        </div>
+        <div class="image-item">
+            <img src="ima6.jpg" alt="Foto 6">
+            <div class="description">Casa con jardín amplio</div>
+            <a href="#" class="price-button">Precio: 300,000€</a>
+        </div>
+        <div class="image-item">
+            <img src="ima7.jpg" alt="Foto 7">
+            <div class="description">Casa familiar con 4 dormitorios</div>
+            <a href="#" class="price-button">Precio: 350,000€</a>
+        </div>
+        <div class="image-item">
+            <img src="ima8.jpg" alt="Foto 8">
+            <div class="description">Casa con un estilo moderno</div>
+            <a href="#" class="price-button">Precio: 400,000€</a>
+        </div>
+    </section>
+
+    <!-- Pop-ups para las casas 3, 4, 5 -->
+    <div id="popup3" class="popup">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closePopup('popup3')">Cerrar</button>
+            <img src="ima3.jpg" alt="Foto 3">
+            <p>Descripción de la Casa 3: Casa con 3 habitaciones.</p>
+            <p>Precio: 175,000€</p>
+        </div>
+    </div>
+    <div id="popup4" class="popup">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closePopup('popup4')">Cerrar</button>
+            <img src="ima4.jpg" alt="Foto 4">
+            <p>Descripción de la Casa 4: Casa con vistas al mar.</p>
+            <p>Precio: 200,000€</p>
+        </div>
+    </div>
+    <div id="popup5" class="popup">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closePopup('popup5')">Cerrar</button>
+            <img src="ima5.jpg" alt="Foto 5">
+            <p>Descripción de la Casa 5: Casa moderna de 5 habitaciones.</p>
+            <p>Precio: 250,000€</p>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <footer class="copyright">
+        <p>&copy; 2025 Inmobiliaria Martinez & Lopes S.L. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script1.js"></script>
+</body>
+</html>

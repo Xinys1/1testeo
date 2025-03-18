@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <style>
+        /* Estilo general */
+        body {
+            font-family:"Comic Sans MS", cursive;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Animación para el offer-banner */
+        @keyframes moveBanner {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(10px); /* Movimiento hacia la derecha */
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        /* Aplicar la animación al banner */
+        .offer-banner {
+            position: fixed;
+            bottom: 5px;
+            right: 5px;
+            background-color: black;
+            color: white;
+            padding: 5px 20px;
+            text-align: center;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            z-index: 1000;
+            border-radius: 50px;
+            animation: moveBanner 3s ease-in-out infinite; /* Animación en bucle */
+        }
+
+        /* Encabezado con botones */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            padding: 20px 5%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+            position: relative;
+        }
+
+        header h1 {
+            font-family: "Satisfy", serif;
+            margin: 0;
+            font-size: 3.6rem; /* Título un 20% más grande */
+            text-align: center;
+        }
+
+        .header-buttons {
+            position: absolute;
+            left: 5%;
+            display: flex;
+            gap: 20px; /* Espacio entre los botones */
+        }
+
+        .header-buttons a {
+            text-decoration: none;
+            color: #333;
+            font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .header-buttons a:hover {
+            color: #ff9900;
+        }
+
+        /* Galería de fotos */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 40px 10%;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .button-overlay {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button-overlay:hover {
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        /* Línea horizontal */
+        .line {
+            width: 100%;
+            height: 1px;
+            background-color: #ccc;
+            margin: 40px 0;
+        }
+
+        /* Sección de Ayuda y Asistencia, Idioma y Acerca de */
+        .info-section {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px 10%;
+        }
+
+        .info-box {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 30%;
+        }
+
+        .info-box h3 {
+            margin-top: 0;
+            font-size: 1.6rem;
+        }
+
+        .info-box ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .info-box ul li {
+            margin: 10px 0;
+        }
+
+        /* Eliminar el estilo de caja para los links */
+        .info-section a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1rem;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .info-section a:hover {
+            color: #ff9900;
+        }
+
+        /* Estilos del pop-up */
+        .popup {
+            display: none; /* Ocultar el popup por defecto */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            width: 90%;
+            max-width: 600px; /* Pop-up más pequeño */
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            padding: 20px;
+            box-sizing: border-box;
+            max-height: 80%; /* Ajuste de altura */
+            overflow-y: auto;
+        }
+
+        .popup img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .popup .info {
+            margin-top: 15px;
+        }
+
+        .popup .info p {
+            font-size: 1.2rem;
+            margin: 5px 0;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            background-color: #ff9900;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Banner de ofertas -->
+    <div class="offer-banner">
+        Del 18 al 22 de mayo, en todos los pantalones<br> 
+        habrá un 20% DE DESCUENTO!!
+    </div>
+
+    <!-- Encabezado con botones -->
+    <header>
+        <div class="header-buttons">
+            <a href="index.html">Inicio</a>
+            <a href="altacliente.html">Alta Cliente</a>
+            <a href="javascript:void(0)" onclick="openPopup()">Ver Ubicación</a>
+        </div>
+        <h1>Bienvenidos a ZARA HOME</h1>
+    </header>
+
+    <!-- Galería de fotos -->
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="moda1.jpg" alt="Imagen 1">
+            <button class="button-overlay" onclick="openProductPopup('moda1.jpg', 'Producto 1', '$40.00', 'S, M, L')">Ver más</button>
+        </div>
+        <div class="gallery-item">
+            <img src="moda2.jpg" alt="Imagen 2">
+            <button class="button-overlay" onclick="openProductPopup('moda2.jpg', 'Producto 2', '$50.00', 'M, L, XL')">Ver más</button>
+        </div>
+        <div class="gallery-item">
+            <img src="moda3.jpeg" alt="Imagen 3">
+            <button class="button-overlay" onclick="window.location.href='#'">Ver más</button>
+        </div>
+        <div class="gallery-item">
+            <img src="moda4.jpg" alt="Imagen 4">
+            <button class="button-overlay" onclick="window.location.href='#'">Ver más</button>
+        </div>
+        <div class="gallery-item">
+            <img src="moda5.jpg" alt="Imagen 5">
+            <button class="button-overlay" onclick="window.location.href='#'">Ver más</button>
+        </div>
+        <div class="gallery-item">
+            <img src="moda6.jpg" alt="Imagen 6">
+            <button class="button-overlay" onclick="window.location.href='#'">Ver más</button>
+        </div>
+    </div>
+
+    <!-- Línea horizontal -->
+    <div class="line"></div>
+
+    <!-- Sección de Ayuda y Asistencia, Idioma y Acerca de -->
+    <div class="info-section">
+        <!-- Ayuda y Asistencia -->
+        <div>
+            <h3>Ayuda y Asistencia</h3>
+            <a href="#">FAQ</a>
+            <a href="#">Estado del pedido</a>
+            <a href="#">Entrega</a>
+            <a href="#">Devoluciones y Reembolsos</a>
+            <a href="#">Pedidos y Pagos</a>
+            <a href="#">Guía de Tallas</a>
+            <a href="#">Localizador de Tiendas</a>
+            <a href="#">Mapa del sitio</a>
+        </div>
+
+        <!-- Acerca de Zara Home Trucha -->
+        <div>
+            <h3>Acerca de Zara Home Trucha</h3>
+            <a href="#">Sobre Nosotros</a>
+            <a href="#">Sala de Prensa</a>
+            <a href="#">ODR</a>
+            <a href="#">Términos y Condiciones</a>
+            <a href="#">Términos y condiciones de las tarjetas regalo</a>
+            <a href="#">Política de Privacidad</a>
+            <a href="#">Compromiso de Privacidad</a>
+            <a href="#">Política de Cookies</a>
+            <a href="#">Aviso Legal</a>
+            <a href="#">Productos Falsificados</a>
+            <a href="#">Mapa del Sitio</a>
+        </div>
+
+        <!-- Idioma -->
+        <div>
+            <h3>Idioma</h3>
+            <a href="#">🌎ES / ES</a>
+        </div>
+    </div>
+
+    <!-- Popup de la Ubicación -->
+    <div class="popup" id="location-popup">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closePopup()">X</button>
+            <iframe src="https://www.google.com/maps?q=Calle+Abrazamozas+3,+Zamora&output=embed" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Popup de productos -->
+    <div class="popup" id="product-popup">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closeProductPopup()">X</button>
+            <img src="" alt="Imagen del Producto" id="popup-image">
+            <div class="info">
+                <p id="popup-name"></p>
+                <p id="popup-price"></p>
+                <p id="popup-size"></p>
+            </div>
+        </div>
+    </div>
+
+<script>
+    // Función para abrir el popup de ubicación
+    function openPopup() {
+        document.getElementById('location-popup').style.display = 'flex';
+    }
+
+    // Función para cerrar el popup de ubicación
+    function closePopup() {
+        document.getElementById('location-popup').style.display = 'none';
+    }
+
+    // Función para abrir el popup de producto
+    function openProductPopup(image, name, price, size) {
+        document.getElementById('product-popup').style.display = 'flex';
+        document.getElementById('popup-image').src = image;
+        document.getElementById('popup-name').textContent = name;
+        document.getElementById('popup-price').textContent = 'Precio: ' + price;
+        document.getElementById('popup-size').textContent = 'Tamaño disponible: ' + size;
+    }
+
+    // Función para cerrar el popup de producto
+    function closeProductPopup() {
+        document.getElementById('product-popup').style.display = 'none';
+    }
+</script>
+
+<!-- Sección de Copyright -->
+<div style="background-color: black; color: white; text-align: center; padding: 20px 0; font-family: 'Lora', serif; font-size: 0.8rem;">
+    <em>© Copyright </em><em></em>
+</div>
+
+</body>
+</html>
