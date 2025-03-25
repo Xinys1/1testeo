@@ -5,171 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jose Asensio - Portafolio</title>
     <link rel="stylesheet" href="portfolio.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- Iconos de Font Awesome para X e Instagram -->
+    <!-- Fuentes de Google Fonts (consolidadas) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Poppins:wght@300;400;600&family=WindSong:wght@400;500&family=Sriracha&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <!-- Iconos de Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=WindSong:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-
 </head>
 <body>
-<<<<<<< HEAD
-    <header>
-        <div class="header-container">
-            <h1>Jose Asensio</h1>
-            <nav>
-                <div class="nav-links">
-                    <a href="trabajo.html" class="btn">Trabajo</a>
-                    <a href="bio.html" class="btn">Bio</a>
-                    <span id="contacto-toggle" class="btn" style="cursor: pointer;">Contacto</span>
-                    <div class="social-icons">
-                        <a href="https://Instagram.com" target="_blank"><img src="icons8-instagram-48.png" alt="Instagram" style="width: 34px; height: 34px;"></a>
-                        <a href="https://x.com" target="_blank"><img src="icons8-x-48.png" alt="X" style="width: 34px; height: 34px;"></a>
-                    </div>
-                </div>
-            </nav>
-=======
     <div class="container">
+        <!-- Navegación -->
         <nav>
             <div class="nav-links">
                 <a href="trabajo.html" class="btn">Trabajo</a>
                 <a href="bio.html" class="btn">Bio</a>
                 <span id="contacto-toggle" class="btn" style="cursor: pointer;">Contacto</span>
                 <div class="social-icons">
-                    <a href="https://Instagram.com/jottys" target="_blank"><img src="icons8-instagram-48.png" alt="Instagram" style="width: 34px; height: 34px;"></a>
-                    <a href="https://x.com/xinyzm" target="_blank"><img src="icons8-x-48.png" alt="X" style="width: 34px; height: 34px;"></a>
+                    <a href="https://Instagram.com/jottys" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/xinyzm" target="_blank"><i class="fab fa-x-twitter"></i></a>
                 </div>
             </div>
         </nav>
 
+        <!-- Sección Hero -->
         <section class="hero">
             <h1>Jose Asensio</h1>
             <p class="subtitle">Mi trabajo</p>
         </section>
 
+        <!-- Texto introductorio -->
+        <section class="intro-text">
+            <h2>Mi Trabajo</h2>
+            <p>Soy Jose Asensio, un diseñador web apasionado por crear experiencias digitales únicas utilizando <strong>HTML, CSS y JavaScript</strong>. Además, he trabajado en la gestión de redes sociales y como moderador en comunidades de Telegram y Discord, organizando y liderando diversos proyectos relacionados con criptomonedas. Explora mis proyectos y descubre cómo combino creatividad y tecnología para dar vida a ideas innovadoras.</p>
+        </section>
+
+        <!-- Galería de proyectos -->
         <section class="gallery">
             <div class="gallery-container">
                 <div class="gallery-item">
-                    <a href="ZaraHome\index.html" target="_blank"><img src="imagen1.png" alt="Proyecto 1"></a>
+                    <a href="ZaraHome/index.html" target="_blank">
+                        <img src="imagen1.png" alt="Proyecto 1">
+                        <div class="project-overlay">
+                            <span class="project-title">Zara Home - Elegancia</span>
+                        </div>
+                    </a>
                 </div>
                 <div class="gallery-item">
-                    <a href="Procesiones\index.html" target="_blank"><img src="imagen2.png" alt="Proyecto 2"></a>
+                    <a href="Procesiones/index.html" target="_blank">
+                        <img src="imagen2.png" alt="Proyecto 2">
+                        <div class="project-overlay">
+                            <span class="project-title">Procesiones - Tradición y Devoción</span>
+                        </div>
+                    </a>
                 </div>
+                <div class="gallery-item">
+                    <a href="Inmobiliaria/index.html" target="_blank">
+                        <img src="imagen3.png" alt="Proyecto 3">
+                        <div class="project-overlay">
+                            <span class="project-title">Inmobiliaria - Espacios de Ensueño</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="Vinos 14-03/index.html" target="_blank">
+                        <img src="imagen4.png" alt="Proyecto 4">
+                        <div class="project-overlay">
+                            <span class="project-title">Vinos - Sabor y Tradición</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="gallery-item gallery-video">
+                    <a href=".PLANETAS/index.html" target="_blank">
+                        <video autoplay muted loop>
+                            <source src="https://cdn.pixabay.com/video/2022/11/23/140202-774522006_large.mp4" type="video/mp4">
+                            Tu navegador no soporta el elemento de video.
+                        </video>
+                        <div class="project-overlay">
+                            <span class="project-title">Planetas - Un Viaje Cósmico</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="Portfolio2/index.html" target="_blank">
+                        <img src="portfolio.jpg" alt="Proyecto 5">
+                        <div class="project-overlay">
+                            <span class="project-title">Portfolio2</span>
+                        </div>
+                    </a>
+                </div>
+                <!-- Placeholder para mantener el diseño -->
+                <div class="gallery-item placeholder"></div>
             </div>
         </section>
     </div>
-    
-    <!-- Sección Parallax agregada aquí, fuera del contenedor de la galería -->
-    <section class="parallax-section"></section>
-    
-    <div class="container">
-        <section class="gallery">
-            <div class="gallery-container">
-                <div class="gallery-item">
-                    <a href="Inmobiliaria/index.html" target="_blank"><img src="imagen3.png" alt="Proyecto 3"></a>
-                </div>
-                <div class="gallery-item">
-                    <a href="Vinos%2014-03/index.html" target="_blank"><img src="imagen4.png" alt="Proyecto 4"></a>
-                </div>
-            </div>
-        </section>
 
+    <!-- Sección Parallax -->
+    <section class="parallax-section"></section>
+
+    <!-- Pie de página -->
+    <div class="container">
         <div class="bottom-section">
             <hr>
-            <p>Política de Privacidad<br>Copyright reservado a Jose Asensio</p>
->>>>>>> b734c25719b6457dc3f7c5bc4a610f434da8da20
+            <p>Política de Privacidad - © Copyright reservado a Jose Asensio</p>
         </div>
-    </header>
+    </div>
 
-                <!-- Texto introductorio antes del parallax -->
-                <section class="intro-text">
-                    <h2>Mi Trabajo</h2>
-                    <p>Soy Jose Asensio, un diseñador web apasionado por crear experiencias digitales únicas utilizando <strong>HTML, CSS y JavaScript</strong>. Además, he trabajado en la gestión de redes sociales y como moderador en comunidades de Telegram y Discord, organizando y liderando diversos proyectos relacionados con criptomonedas. Explora mis proyectos y descubre cómo combino creatividad y tecnología para dar vida a ideas innovadoras.</p>
-                </section>
-            </div>
-    <main>
-        <div class="container">
-            <section class="gallery">
-                <div class="gallery-container">
-                    <div class="gallery-item">
-                        <a href="C:\Users\super\OneDrive\Escritorio\ClaseTomáz\1testeo\ZaraHome\index.html" target="_blank">
-                            <img src="imagen1.png" alt="Proyecto 1">
-                            <div class="project-overlay">
-                                <span class="project-title">Zara Home - Elegancia</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="C:\Users\super\OneDrive\Escritorio\ClaseTomáz\1testeo\Procesiones\index.html" target="_blank">
-                            <img src="imagen2.png" alt="Proyecto 2">
-                            <div class="project-overlay">
-                                <span class="project-title">Procesiones - Tradición y Devoción</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-item">
-                        <a href="Inmobiliaria/index.html" target="_blank">
-                            <img src="imagen3.png" alt="Proyecto 3">
-                            <div class="project-overlay">
-                                <span class="project-title">Inmobiliaria - Espacios de Ensueño</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="gallery-container">
-                    <div class="gallery-item">
-                        <a href="Vinos%2014-03/index.html" target="_blank">
-                            <img src="imagen4.png" alt="Proyecto 4">
-                            <div class="project-overlay">
-                                <span class="project-title">Vinos - Sabor y Tradición</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="gallery-item gallery-video">
-                        <a href=".PLANETAS/index.html" target="_blank">
-                            <video autoplay muted loop>
-                                <source src="https://cdn.pixabay.com/video/2022/11/23/140202-774522006_large.mp4" type="video/mp4">
-                                Tu navegador no soporta el elemento de video.
-                            </video>
-                            <div class="project-overlay">
-                                <span class="project-title">Planetas - Un Viaje Cósmico</span>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="gallery-item">
-                        <a href="Portfolio2/index.html" target="_blank">
-                            <img src="portfolio.jpg" alt="Proyecto 4">
-                            <div class="project-overlay">
-                                <span class="project-title">Portfolio2</span>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Añadir un placeholder para mantener el diseño de 3 en 3 -->
-                    <div class="gallery-item placeholder"></div>
-                </div>
-            </section>
-
-        </div>
-        <!-- Sección Parallax -->
-        <div class="parallax-section"></div>
-
-        <div class="container">
-            <div class="bottom-section">
-                <hr>
-                <p>Política de Privacidad - © Copyright reservado a Jose Asensio</p>
-            </div>
-        </div>
-    </main>
-<
     <!-- Modal de formulario -->
     <div id="contacto-modal" class="modal" style="display: none;">
         <div class="modal-content">
