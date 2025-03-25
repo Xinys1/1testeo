@@ -34,7 +34,7 @@ header {
 .header-container {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Cambiado de 'top' a 'center' para alinear verticalmente */
+    align-items: center; /* Alinea verticalmente el título y la navegación */
     padding: 0 40px;
     width: 100%;
     max-width: 1400px;
@@ -59,7 +59,7 @@ nav {
 
 .nav-links {
     display: flex;
-    align-items: center; /* Cambiado de 'align-content: top' a 'align-items: center' */
+    align-items: center;
     gap: 15px; /* Más espacio entre botones */
     flex: 0 0 auto; /* Evita que los botones crezcan */
 }
