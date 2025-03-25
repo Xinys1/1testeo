@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Sistema Solar - Inicio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Video de fondo -->
+    <video autoplay muted loop class="background-video">
+        <source src="https://cdn.pixabay.com/video/2024/10/12/236105_large.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+    </video>
+
+    <header>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="sol.html">El Sol</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Planetas</a>
+                    <div class="dropdown-content">
+                        <a href="mercurio.html">Mercurio</a>
+                        <a href="venus.html">Venus</a>
+                        <a href="tierra.html">Tierra</a>
+                        <a href="marte.html">Marte</a>
+                        <a href="jupiter.html">Júpiter</a>
+                        <a href="saturno.html">Saturno</a>
+                        <a href="urano.html">Urano</a>
+                        <a href="neptuno.html">Neptuno</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Planetas Enanos</a>
+                    <div class="dropdown-content">
+                        <a href="ceres.html">Ceres</a>
+                        <a href="pluton.html">Plutón</a>
+                        <a href="haumea.html">Haumea</a>
+                        <a href="makemake.html">Makemake</a>
+                        <a href="eris.html">Eris</a>
+                    </div>
+                </li>
+                <li><a href="videos.html">Videos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="video-section">
+            <h2>El Sistema Solar</h2>
+            <div class="video-container">
+                <!-- Aquí puedes añadir tu video -->
+                <video autoplay muted loop>
+                    <source src="https://cdn.pixabay.com/video/2022/11/23/140202-774522006_large.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
+        </section>
+
+        <section class="photo-album">
+            <h2>Álbum de Fotos</h2>
+            <div class="album-container">
+                <div class="album-item">
+                    <img src="imagen1.jpg" alt="Foto del Sistema Solar 1" class="album-image" onclick="openModal('modal1')">
+                </div>
+                <div class="album-item">
+                    <img src="imagen2.jpg" alt="Foto del Sistema Solar 2" class="album-image" onclick="openModal('modal2')">
+                </div>
+                <div class="album-item">
+                    <img src="imagen3.jpg" alt="Foto del Sistema Solar 3" class="album-image" onclick="openModal('modal3')">
+                </div>
+                <div class="album-item">
+                    <img src="imagen4.jpg" alt="Foto del Sistema Solar 4" class="album-image" onclick="openModal('modal4')">
+                </div>
+            </div>
+
+            <!-- Modales para cada imagen -->
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('modal1')">&times;</span>
+                    <img src="imagen1.jpg" alt="Foto del Sistema Solar 1" class="modal-image">
+                </div>
+            </div>
+            <div id="modal2" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('modal2')">&times;</span>
+                    <img src="imagen2.jpg" alt="Foto del Sistema Solar 2" class="modal-image">
+                </div>
+            </div>
+            <div id="modal3" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('modal3')">&times;</span>
+                    <img src="imagen3.jpg" alt="Foto del Sistema Solar 3" class="modal-image">
+                </div>
+            </div>
+            <div id="modal4" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal('modal4')">&times;</span>
+                    <img src="imagen4.jpg" alt="Foto del Sistema Solar 4" class="modal-image">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="hero">
+        <h1>Explora el Sistema Solar</h1>
+        <h2>¿Qué es el sistema solar?</h2>
+        <p> El sistema solar es un sistema planetario. Un sistema planetario está constituido por una estrella (o en ocasiones un conjunto de estrellas) y los cuerpos celestes que giran a su alrededor, es decir, que se encuentran bajo la influencia de su campo gravitatorio, ya se trate de planetas con sus respectivas lunas, planetas menores, asteroides, cometas, o polvo estelar.</p><br>
+        
+        <p>En el caso del sistema solar, la estrella que da forma a todo el sistema planetario es el Sol, el cual ocupa el centro de un enorme disco de material que se extiende por más de 30.000 millones de kilómetros, en el que como decíamos, se encuentran sus ocho planetas y demás objetos celestes.</p>
+        <br><br>
+        <h2>¿Cuántos planetas hay en el sistema solar?</h2>
+        <p> En el sistema solar hay ocho planetas: Mercurio, Venus, Tierra, Marte, Júpiter, Saturno, Urano y Neptuno.<br> Estos planetas se dividen en dos grupos: los planetas interiores y los planetas exteriores.<br> Los planetas interiores son los cuatro planetas más cercanos al Sol: Mercurio, Venus, Tierra y Marte.<br> Los planetas exteriores son los cuatro planetas más alejados del Sol: Júpiter, Saturno, Urano y Neptuno.</p><br>
+        
+        <p>Además de los planetas, el sistema solar también está formado por otros objetos celestes, como los planetas enanos, asteroides, cometas, meteoroides y polvo estelar. <br>Los planetas enanos son cuerpos celestes que no han limpiado su órbita de otros objetos, como sí lo han hecho los planetas.<br> En el sistema solar hay cinco planetas enanos: Ceres, Plutón, Haumea, Makemake y Eris.</p>
+    </section>
+        
+    <footer>
+        <p>© 2025 Sistema Solar - Todos los derechos reservados</p>
+    </footer>
+
+    <!-- JavaScript para el modal -->
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        // Cerrar el modal al hacer clic fuera de él
+        window.onclick = function(event) {
+            const modals = document.getElementsByClassName('modal');
+            for (let i = 0; i < modals.length; i++) {
+                if (event.target == modals[i]) {
+                    modals[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

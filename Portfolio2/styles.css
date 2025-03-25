@@ -1,0 +1,572 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background: url('fondo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Contenedor principal */
+.mainContainer {
+    width: 1300px;
+    height: 80vh;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+/* Contenido desplazable */
+.contentWrapper {
+    height: 100%;
+    overflow-y: auto;
+    padding: 30px;
+    background: url('papel.jpg') repeat;
+    scroll-snap-type: y mandatory;
+}
+
+/* Iconos sociales */
+.socialHeader {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    display: flex;
+    gap: 10px;
+}
+
+.socialHeader a {
+    color: #333;
+    font-size: 24px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.socialHeader a:hover {
+    color: #d4b89e;
+    transform: rotate(15deg);
+}
+
+/* Menú hamburguesa */
+.menuHolder {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.c-hamburger {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    font-size: 0;
+    text-indent: -9999px;
+    appearance: none;
+    box-shadow: none;
+    border-radius: none;
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+
+.c-hamburger span {
+    display: block;
+    position: absolute;
+    top: 14px;
+    left: 5px;
+    right: 5px;
+    height: 3px;
+    background: #333;
+}
+
+.c-hamburger span::before,
+.c-hamburger span::after {
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    content: "";
+}
+
+.c-hamburger span::before {
+    top: -8px;
+}
+
+.c-hamburger span::after {
+    bottom: -8px;
+}
+
+.c-hamburger--htx span {
+    transition: background 0s 0.3s;
+}
+
+.c-hamburger--htx span::before,
+.c-hamburger--htx span::after {
+    transition-duration: 0.3s, 0.3s;
+    transition-delay: 0.3s, 0s;
+}
+
+.c-hamburger--htx span::before {
+    transition-property: top, transform;
+}
+
+.c-hamburger--htx span::after {
+    transition-property: bottom, transform;
+}
+
+.c-hamburger--htx.is-active span {
+    background: none;
+}
+
+.c-hamburger--htx.is-active span::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.c-hamburger--htx.is-active span::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+
+.c-hamburger--htx.is-active span::before,
+.c-hamburger--htx.is-active span::after {
+    transition-delay: 0s, 0.3s;
+}
+
+.menu-wrap {
+    position: fixed;
+    top: 0;
+    right: -200px;
+    width: 200px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 150;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu-wrap.is-active {
+    right: 0;
+}
+
+.menu-close {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.menu-close:hover {
+    color: #d4b89e;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 60px 15px;
+}
+
+.menu li {
+    margin: 15px 0;
+}
+
+.menu a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.menu a:hover {
+    color: #d4b89e;
+    padding-left: 10px;
+}
+
+/* Secciones */
+.section {
+    min-height: 100%;
+    scroll-snap-align: start;
+    padding: 80px 0;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    position: relative;
+}
+
+.section:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section h2 {
+    font-size: 36px;
+    font-family: 'Playfair Display', serif;
+    color: #000;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1px;
+    text-transform: none;
+}
+
+.section p {
+    font-size: 20px;
+    color: #555;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Video principal */
+.hero-video {
+    width: 100%;
+    height: 90%; /* Ocupa toda la altura de la sección */
+    object-fit: contain; /* Ajusta el video para que se vea entero */
+    position: absolute;
+    top: 0; /* Ajustamos para que comience desde la parte superior */
+    left: 0;
+    z-index: 0;
+    border-radius: 0;
+    margin-top: 30px;
+}
+
+/* Contenedor para el título y el video */
+.title-video-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Video en la sección About */
+.hero-video-class {
+    width: 300px; /* Tamaño ajustado */
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.hero-video-class:hover {
+    transform: scale(1.05);
+}
+
+/* Título personalizado */
+.custom-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.custom-title span {
+    display: block;
+    color: #333;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.custom-title span:first-child {
+    font-family: "Comforter", cursive;
+    font-size: 72px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    padding: 10px 20px;
+    display: inline-block;
+    background: linear-gradient(90deg, #d4b89e, #f5e6d3);
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.custom-title span:first-child:hover {
+    transform: scale(1.05);
+}
+
+.custom-title .subtitle {
+    font-family: 'Raleway', sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    margin-top: 10px;
+    color: #555;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 5px 15px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* Separación mayor entre Portfolio y Contacto */
+#contact {
+    margin-top: 100px;
+}
+
+/* Gallery */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #252525;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.gallery-item img,
+.gallery-item video {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+}
+
+.gallery-item:hover img,
+.gallery-item:hover video {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+/* Overlay para los proyectos */
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-title {
+    color: #c0c0c0;
+    font-family: "Raleway", sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Placeholder para mantener el diseño de 3 en 3 */
+.gallery-item.placeholder {
+    visibility: hidden;
+}
+
+/* Estilo específico para videos */
+.gallery-video video {
+    object-fit: cover;
+}
+
+/* Formulario de contacto */
+.contact-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contact-form label {
+    display: block;
+    margin: 5px 0 2px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 5px;
+    border: 2px solid #d4b89e;
+    border-radius: 5px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #c0a48e;
+    box-shadow: 0 0 5px rgba(212, 184, 158, 0.5);
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.contact-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #d4b89e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #c0a48e;
+    transform: translateY(-2px);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .mainContainer {
+        width: 90%;
+        height: 60vh;
+    }
+
+    .section h2 {
+        font-size: 28px;
+    }
+
+    .section p {
+        font-size: 16px;
+    }
+
+    .socialHeader {
+        top: 15px;
+        right: 40px;
+    }
+
+    .socialHeader a {
+        font-size: 20px;
+    }
+
+    .menuHolder {
+        top: 15px;
+        left: 15px;
+    }
+
+    .c-hamburger {
+        width: 25px;
+        height: 25px;
+    }
+
+    .c-hamburger span {
+        top: 11px;
+        left: 4px;
+        right: 4px;
+        height: 2px;
+    }
+
+    .c-hamburger span::before {
+        top: -6px;
+    }
+
+    .c-hamburger span::after {
+        bottom: -6px;
+    }
+
+    .menu-wrap {
+        width: 180px;
+        right: -180px;
+    }
+
+    .menu a {
+        font-size: 16px;
+    }
+
+    .contact-form {
+        max-width: 300px;
+    }
+
+    .contact-form label {
+        font-size: 14px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    .contact-form button {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .hero-video {
+        height: 100%;
+    }
+
+    .title-video-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero-video-class {
+        width: 200px;
+        height: 150px;
+    }
+
+    .custom-title span:first-child {
+        font-size: 36px;
+    }
+
+    .custom-title .subtitle {
+        font-size: 18px;
+    }
+}

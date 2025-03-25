@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jose Asensio - Portafolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome para los iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comforter&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Contenedor principal -->
+    <div class="mainContainer">
+        <!-- Contenido desplazable -->
+        <div class="contentWrapper">
+            <!-- Iconos sociales -->
+            <div class="socialHeader">
+                <a href="https://www.instagram.com/joseasensio/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:joseasensiobarrios@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+
+            <!-- Menú hamburguesa -->
+            <div class="menuHolder">
+                <button class="c-hamburger c-hamburger--htx" id="open-button">
+                    <span>toggle menu</span>
+                </button>
+            </div>
+
+            <div class="menu-wrap" id="menuWrap">
+                <span class="menu-close">×</span>
+                <nav class="menu">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Sección Home -->
+            <section id="home" class="section">
+                <video loop muted autoplay class="hero-video">
+                    <source src="https://cdn.pixabay.com/video/2019/03/20/22130-325481645_large.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </section>
+
+            <!-- Sección About -->
+            <section id="about" class="section">
+                <div class="custom-title">
+                    <div class="title-video-container">
+                        <span>Jose Asensio Barrios</span>
+                        <video loop muted autoplay class="hero-video-class">
+                            <source src="https://cdn.pixabay.com/video/2021/01/03/61037-497754241_large.mp4" type="video/mp4">
+                            Tu navegador no soporta el elemento de video.
+                        </video>
+                    </div>
+                    <span class="subtitle">Diseñador Web y Gestor de Comunidades</span>
+                </div>
+                <p>Soy un diseñador web apasionado por crear experiencias digitales únicas utilizando HTML, CSS y JavaScript. Además, he trabajado en la gestión de redes sociales y como moderador en comunidades de Telegram y Discord, organizando y liderando diversos proyectos relacionados con criptomonedas. Explora mis proyectos y descubre cómo combino creatividad y tecnología para dar vida a ideas innovadoras.</p>
+            </section>
+
+            <!-- Sección Portfolio -->
+            <section id="portfolio" class="section">
+                <h2>Portafolio</h2>
+                <div class="gallery">
+                    <div class="gallery-container">
+                        <div class="gallery-item">
+                            <a href="C:\Users\super\OneDrive\Escritorio\ClaseTomáz\1testeo\ZaraHome\index.html" target="_blank">
+                                <img src="imagen1.png" alt="Proyecto 1">
+                                <div class="project-overlay">
+                                    <span class="project-title">Zara Home - Elegancia</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="gallery-item">
+                            <a href="C:\Users\super\OneDrive\Escritorio\ClaseTomáz\1testeo\Procesiones\index.html" target="_blank">
+                                <img src="imagen2.png" alt="Proyecto 2">
+                                <div class="project-overlay">
+                                    <span class="project-title">Procesiones - Tradición y Devoción</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="gallery-item">
+                            <a href="Inmobiliaria/index.html" target="_blank">
+                                <img src="imagen3.png" alt="Proyecto 3">
+                                <div class="project-overlay">
+                                    <span class="project-title">Inmobiliaria - Espacios de Ensueño</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="gallery-container">
+                        <div class="gallery-item">
+                            <a href="Vinos%2014-03/index.html" target="_blank">
+                                <img src="imagen4.png" alt="Proyecto 4">
+                                <div class="project-overlay">
+                                    <span class="project-title">Vinos - Sabor y Tradición</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="gallery-item gallery-video">
+                            <a href=".PLANETAS/index.html" target="_blank">
+                                <video autoplay muted loop>
+                                    <source src="https://cdn.pixabay.com/video/2022/11/23/140202-774522006_large.mp4" type="video/mp4">
+                                    Tu navegador no soporta el elemento de video.
+                                </video>
+                                <div class="project-overlay">
+                                    <span class="project-title">Planetas - Un Viaje Cósmico</span>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Añadir un placeholder para mantener el diseño de 3 en 3 -->
+                        <div class="gallery-item placeholder"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Contact -->
+            <section id="contact" class="section">
+                <h2>Contacto</h2>
+                <form class="contact-form">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono">
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="comentarios">Comentarios:</label>
+                    <textarea id="comentarios" name="comentarios" rows="3" required></textarea>
+
+                    <button type="submit">Enviar</button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Menú hamburguesa
+        (function() {
+            "use strict";
+            var toggles = document.querySelectorAll(".c-hamburger");
+            var closeBtn = document.querySelector(".menu-close");
+            for (var i = toggles.length - 1; i >= 0; i--) {
+                var toggle = toggles[i];
+                toggleHandler(toggle);
+            }
+            function toggleHandler(toggle) {
+                toggle.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    var menuWrap = document.getElementById("menuWrap");
+                    if (this.classList.contains("is-active")) {
+                        this.classList.remove("is-active");
+                        menuWrap.classList.remove("is-active");
+                    } else {
+                        this.classList.add("is-active");
+                        menuWrap.classList.add("is-active");
+                    }
+                });
+            }
+            closeBtn.addEventListener("click", function() {
+                var menuWrap = document.getElementById("menuWrap");
+                var hamburger = document.querySelector(".c-hamburger");
+                menuWrap.classList.remove("is-active");
+                hamburger.classList.remove("is-active");
+            });
+        })();
+
+        // Efecto de fade-in al hacer scroll
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll(".section");
+            const options = {
+                threshold: 0.2
+            };
+            const observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, options);
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

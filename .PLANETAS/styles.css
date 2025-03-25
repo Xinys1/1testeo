@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #e0e0e0; /* Texto claro */
+    line-height: 1.6;
+    position: relative; /* Para que el video de fondo se posicione correctamente */
+}
+
+/* Video de fondo */
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta el video para cubrir toda la pantalla */
+    z-index: -1; /* Coloca el video detrás de todo el contenido */
+    filter: brightness(0.5); /* Oscurece un poco el video para que el texto sea legible */
+}
+
+/* Header y Navegación */
+header {
+    background: rgba(0, 0, 0, 0.8); /* Fondo negro semitransparente */
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+.nav-menu a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #ffd700; /* Amarillo dorado como el Sol */
+}
+
+/* Dropdown */
+.dropdown .dropbtn {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1a1a3d; /* Fondo azul oscuro */
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    border-radius: 5px;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-content a {
+    color: #e0e0e0;
+    padding: 12px 16px;
+    display: block;
+    font-size: 14px;
+}
+
+.dropdown-content a:hover {
+    background-color: #2a2a5d;
+    color: #ffd700;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Sección Hero (página principal) */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejor legibilidad */
+}
+
+.hero h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 48px;
+    color: #ffd700;
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 32px;
+    color: #ffd700;
+    margin: 20px 0;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #b0b0b0;
+    margin-bottom: 20px;
+}
+
+/* Sección de Video */
+.video-section {
+    padding: 50px 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+}
+
+.video-section h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 32px;
+    color: #ffd700;
+    margin-bottom: 20px;
+}
+
+.video-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.video-container video {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Álbum de Fotos */
+.photo-album {
+    padding: 50px 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+}
+
+.photo-album h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 32px;
+    color: #ffd700;
+    margin-bottom: 30px;
+}
+
+.album-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.album-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    cursor: pointer; /* Indica que la imagen es clicable */
+}
+
+.album-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo del Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */
+    overflow: auto;
+}
+
+.modal-content {
+    margin: 5% auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+    position: relative;
+}
+
+.modal-image {
+    width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #ffd700;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ffffff;
+}
+
+/* Información de Planetas */
+.planet-info {
+    padding: 50px 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+}
+
+.planet-info h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 40px;
+    color: #ffd700;
+    margin-bottom: 20px;
+}
+
+.planet-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.planet-info p {
+    font-size: 16px;
+    color: #b0b0b0;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    margin-top: 50px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .dropdown-content {
+        position: static;
+        background-color: #1a1a3d;
+        box-shadow: none;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero h2 {
+        font-size: 24px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .video-section h2,
+    .photo-album h2,
+    .planet-info h1 {
+        font-size: 24px;
+    }
+
+    .album-item img {
+        height: 150px;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .modal-image {
+        max-height: 70vh;
+    }
+}
